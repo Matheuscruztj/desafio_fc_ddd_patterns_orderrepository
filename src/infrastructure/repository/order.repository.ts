@@ -32,7 +32,7 @@ export default class OrderRepository implements OrderRepositoryInterface {
       await OrderItemModel.destroy({
         where: { order_id: entity.id },
         transaction: t,
-      })
+      });
 
       const items = entity.items.map(
         (item) => ({
